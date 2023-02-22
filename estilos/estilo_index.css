@@ -1,0 +1,242 @@
+body {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+.contenedorPrincipal {
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 67vw 76vw 76vw 76vw 76vw;
+    gap: 0px;
+}
+.seccionPrincipal {
+    background-image: url(perfil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+.textoPresentacion {
+    padding: 5% 10% 25% 10%;
+    color: #ffdc82;
+    font-family: Sevillana;
+    font-size: 3.8vw;
+}
+.secciones {
+    display: grid;
+    grid-template-rows: 10vw 66vw;
+
+}
+.enLasSecciones {
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Indie;
+    font-size: 1.7vw;
+    padding: 5%;
+    transition: 3s;
+}
+body.dark .enLasSecciones {
+    background-image: url(background-oscuro.jpg);
+    text-shadow: 0px 0px 10px #ffdc82;
+}
+.titulos {
+    background-color: #ffdc82;
+    color: #0e0d0b;
+    font-family: Marck;
+    font-size: 5vw;
+    text-align: center;
+    padding: 1.5%;transition: 2s;
+}
+body.dark .titulos {
+    background-color: #0e0d0b;
+    color: #ffdc82;
+}
+.info {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 50% 50%;
+    column-gap: 15%;
+    row-gap: 5%;
+}
+.foto {
+    background-image: url(Foto_de_perfil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.formacion {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.educacion {
+    display: grid;
+    grid-template-rows: 25% 75%;
+}
+.interlineado {
+    line-height: 0.8;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-weight:bold ;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 30vw;
+    background-color: #ffdc82;
+    color: black;
+    text-align: center;
+    border-radius: 6vw;
+    padding: 1vw 0;
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: 100%;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.contacto {
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+}
+.formulario {
+    display: grid;
+    grid-template-columns: 32% 36% 32%;
+    padding: 4%;
+}
+.redes {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding: 0% 20% 0% 20%;
+}
+.icono {
+    width: 50%;
+    height: auto;
+    cursor: pointer;
+}
+/*Menú flotante*/
+.botonFlotante {
+    margin: 1vw 5vw;
+    padding: 0% 1% 0% 1%;
+	border-radius: 15%;
+	background-color: #ffdc82;
+    opacity: 0.5;
+	position: fixed;
+	top: ovw;
+	right: 5vw;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 0px 25px rgba(10, 10, 10, 0.1);
+	z-index: 99;
+}
+body.dark.botonFlotante {
+    opacity: 0.3;
+}
+.botonFlotante:hover {
+	background-color: #d8a931;
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+    opacity: 1;
+}
+
+
+/* Menu desplegable */
+#menu ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+
+}
+#menu ul li {
+    background-color:#ffdc82;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0%;
+}
+#menu ul li:hover {
+    background:#af8a2a;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+#menu ul p {
+    font-size: 1vw;
+    font-family: indie-flower;
+    color:black;
+    text-decoration:none;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+#menu ul ul {
+    display:none;
+    position:absolute;
+    top:1.5vw;
+    right: 0;
+    background:#ffdc82;
+    padding:0;
+}
+#menu ul ul li {
+    float:none;
+    width:10vw;
+}
+#menu ul ul a,button {
+    display:block;
+    font-size: 1.5vw;
+    font-family: indie-flower;
+    color:black;
+    text-decoration:none;
+    font-weight:400;
+    padding:10%;
+    letter-spacing:1px;
+    line-height:80%;
+    padding: 6% 10%;
+}
+#menu ul ul button {
+    border: 0px;
+    background:#ffdc82;
+    text-align: left;
+}
+#menu ul ul button:hover {
+    background:#af8a2a;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+#menu ul li:hover > ul {
+    display:block;
+}
+
+
+
+
+/**Fuentes descargadas*/
+@font-face {                           /**Creo la font-family descargada*/
+
+    font-family: Sevillana;
+    
+    src: url(fuentes/Sevillana-Regular.ttf);
+    
+}
+
+@font-face {  
+
+    font-family: Indie;
+    
+    src: url(fuentes/IndieFlower-Regular.ttf);
+    
+}
+@font-face {  
+
+    font-family: Marck;
+    
+    src: url(fuentes/MarckScript-Regular.ttf);
+    
+}
+@font-face {  
+
+    font-family: indie-flower;
+    
+    src: url(fuentes/IndieFlower-Regular.ttf);
+    
+}
