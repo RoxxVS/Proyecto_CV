@@ -34,7 +34,7 @@ body {
     font-family: Indie;
     font-size: 1.7vw;
     padding: 5%;
-    transition: 3s;
+    transition: 0.5s;
 }
 body.dark .enLasSecciones {
     background-image: url(background-oscuro.jpg);
@@ -205,6 +205,57 @@ body.dark.botonFlotante {
 }
 #menu ul li:hover > ul {
     display:block;
+}
+
+/*Media Queries*/
+@media only screen and (max-width: 600px) {
+    .contenedorPrincipal {
+        grid-template-rows: 140vw 125vw 125vw 125vw 125vw;
+    }
+    .seccionPrincipal {
+        background-size: contain;
+        background-color: #0e0d0b;
+        grid-template-columns: auto;
+    }
+    .textoPresentacion {
+        font-size: 6.8vw;
+        position: relative;
+        top: 65vw;
+    }
+    .secciones {
+        display: grid;
+        grid-template-rows: 15vw 110vw;
+    
+    }
+    .titulos {
+        font-size: 8vw;
+    }
+    .enLasSecciones {
+        font-size: 2.7vw;  
+        padding: 3%;
+    }
+    .info {
+        grid-template-rows: 40% 60%;
+        column-gap: 5%;
+    }
+    .interlineado {
+        line-height: 1.1;
+    }
+    .foto {
+        background-size: 100%;
+    }
+    #menu ul {
+        margin:1vw;
+    }
+    #menu ul p {
+        font-size: 3vw;
+    }
+    #menu ul ul {
+        width: 15vw;
+    }
+    #menu ul ul a,button {
+        font-size: 3.5vw;
+    }
 }
 
 
