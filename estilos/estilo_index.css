@@ -247,11 +247,17 @@ body.dark.botonFlotante {
     #menu ul {
         margin:1vw;
     }
+    #menu ul li {
+        padding:7%;
+    }
     #menu ul p {
         font-size: 3vw;
     }
     #menu ul ul {
-        width: 15vw;
+        width: 25vw;
+    }
+    #menu ul ul li {
+        width:86%;
     }
     #menu ul ul a,button {
         font-size: 3.5vw;
