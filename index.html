@@ -2,11 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="icono-flor.ico">   <!--Icono-->
-    <link rel="stylesheet" href="estilos\estilo_index.css">   <!--Hoja de estilos-->
+    <link rel="stylesheet" href="estilos\estilo_index.css">   <!--Hoja de estilos--> 
     <title>Vera Chambers - Diseñadora Gráfica</title>
+    <!-- Open graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vera Chambers, CV" />
+    <meta property="og:description" content="Vera Chambers, diseñadora grafica" />
+    <meta property="og:image" content="estilos\perfil.jpg" />
+    <meta property="og:image:width" content="828" />
+    <meta property="og:image:height" content="450" />
+    <meta property="og:url" content="https://RoxxVS.github.io/proyecto_cv_ticmas/" />
+    <meta property="og:site_name" content="github" />
+
 </head>
 <body>
     <section class="contenedorPrincipal">
@@ -16,7 +26,9 @@
         <section id="informacion" class="secciones">   <!--Información personal-->
             <div class="titulos">información personal</div>
             <section class="enLasSecciones info">
-                <article class="foto"></article> <!--1_Foto-->
+                <article>
+                    <img  class="foto" src="estilos\imagenes\Foto_de_perfil.jpg" alt="No se puede cargar la imagen"/>
+                </article> <!--1_Foto-->
                 <article>  <!--2_Datos Personales-->
                     <h2>Datos personales</h2>
                     <p>Nombre: Vera Chambers</p>
@@ -114,33 +126,55 @@
                 </article>
             </div>
         </section>
-        <section id="contacto" class="secciones">   <!--Contacto-->
+        <section id="contacto" class="secciones contactar">   <!--Contacto-->
             <div class="titulos">Información de contacto</div>
             <section class="enLasSecciones contacto">
                 <div>
                     <h2>Deja tu mensaje para ponerte en contacto conmigo</h2>
                 </div>
-                <div class="formulario">
-                    <div></div>
-                    <div>
-                        <form action="" method="post">
-                            <label for="nombre">Nombre/Empresa:</label>
-                            <br>
-                            <input type="text" id="nombre" name="nombre_de_contacto">
-                            <br>
-                            <label for="mail">Correo electrónico:</label>
-                            <br>
-                            <input type="email" id="mail" name="mail_de_contacto">
-                            <br>
-                            <label for="mensaje">Mensaje:</label>
-                            <br>
-                            <textarea id="mensaje" name="mensaje_de_contacto"></textarea>
-                            <br>
-                            <button type="submit">Envíe su mensaje</button>
-                        </form>
+                <form action="" class="formulario" id="formulario">
+			
+                    <!-- Grupo: Nombre -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label">Nombre</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
                     </div>
-                    <div></div>
-                </div>
+        
+        
+                    <!-- Grupo: Correo Electronico -->
+                    <div class="formulario__grupo" id="grupo__correo">
+                        <label for="correo" class="formulario__label">Correo Electrónico</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                    </div>
+        
+                    <!--Grupo: textarea-->
+                    <div class="formulario__grupo" id="grupo__textarea">
+                        <label for="mensaje" class="formulario__label">Deja tu mensaje</label>
+                        <textarea name="mensaje" id="mensaje"></textarea>
+        
+                    </div>
+        
+                
+        
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="formulario__btn">Enviar</button>
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                    </div>
+                    
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div>
+
+                </form>
+
                 <div class="redes">
                     <div>
                         <img class="icono" src="recursos/01-whatsapp.png" alt="No se puede cargar la imagen" onclick="irAWsp()"/>
@@ -171,7 +205,7 @@
                         <li><a href="#formacion">Formación</a></li>
                         <li><a href="#experiencia">Experiencia</a></li>
                         <li><a href="#contacto">Contactar</a></li>
-                        <li><button type="button">Imprimir Currículum</button></li>
+                        <li><button class="botonImprimir" type="button" onclick="imprimir()">Imprimir Currículum</button></li>
                         <li><button type="button" onclick="modoOscuro()">Modo oscuro</button></li>
                         </ul>
                 </li>
@@ -179,5 +213,6 @@
         </nav>
     </section>
     <script src="comportamientos\comportamientos.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>

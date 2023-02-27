@@ -3,6 +3,14 @@ body {
     border: 0px;
     padding: 0px;
 }
+textarea {
+    width: 90%;
+    height: 60%;
+    background-color: #ffdc82;
+}
+body.dark textarea {
+    background-color: #c0a96d;
+}
 .contenedorPrincipal {
     width: 100vw;
     display: grid;
@@ -46,11 +54,12 @@ body.dark .enLasSecciones {
     font-family: Marck;
     font-size: 5vw;
     text-align: center;
-    padding: 1.5%;transition: 2s;
+    padding: 1.5%;
+    transition: 1s;
 }
 body.dark .titulos {
     background-color: #0e0d0b;
-    color: #ffdc82;
+    color: #c0a96d;
 }
 .info {
     display: grid;
@@ -60,9 +69,8 @@ body.dark .titulos {
     row-gap: 5%;
 }
 .foto {
-    background-image: url(Foto_de_perfil.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
+    height: auto;
 }
 .formacion {
     display: grid;
@@ -99,12 +107,136 @@ body.dark .titulos {
 }
 .contacto {
     display: grid;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 10% 83% 7%;
 }
 .formulario {
+    padding: 0%;
     display: grid;
-    grid-template-columns: 32% 36% 32%;
-    padding: 4%;
+    grid-template-rows: 15% 15% 25% 10%;
+    gap: 6.5%;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 0;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 90%;
+	background: #ffdc82;
+	border: 3px solid transparent;
+	border-radius: 2px;
+	height: 4vw;
+	transition: .3s ease all;
+}
+body.dark .formulario__input {
+    background-color: #c0a96d;
+}
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 2vw;
+	margin: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+    right: 10%;
+    bottom: 20%;
+    z-index: 100;
+    font-size: 2.5vw;
+    opacity: 0;
+}
+
+.formulario__mensaje {
+	height: 3vw;
+	line-height: 3.5vw;
+	background: #F66060;
+	text-align: center;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+    padding: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 6vw;
+	line-height: 5vw;
+    padding: 1%;
+	width: 18vw;
+	background: #000;
+	color: #ffdc82;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+body.dark .formulario__btn {
+    background-color: #c0a96d;
+    color: #0e0d0b;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
 }
 .redes {
     display: grid;
@@ -206,6 +338,9 @@ body.dark.botonFlotante {
 #menu ul li:hover > ul {
     display:block;
 }
+.botonImprimir {
+    display: block;
+}
 
 /*Media Queries*/
 @media only screen and (max-width: 600px) {
@@ -261,6 +396,38 @@ body.dark.botonFlotante {
     }
     #menu ul ul a,button {
         font-size: 3.5vw;
+    }
+    
+	.formulario__btn {
+		width: 90%;
+	}
+    .botonImprimir {
+        display: none;
+    }
+}
+@media print {
+    .contenedorPrincipal {
+        grid-template-rows: 79vw 79vw 79vw 0vw 0vw;
+    }
+    .seccionPrincipal {
+        display: none;
+    }
+    .contactar {
+        display: none;
+    }
+    .botonFlotante {
+        display: none;
+    }
+    .secciones {
+        grid-template-rows: 12vw 67vw;
+    }
+    .titulos {
+        font-size: 5vw;
+        padding: 2%;
+    }
+    .enLasSecciones {
+        font-size: 1.7vw;
+        padding: 3%;
     }
 }
 
