@@ -7,6 +7,7 @@ textarea {
     width: 90%;
     height: 60%;
     background-color: #ffdc82;
+    font-size: 2vw;
 }
 body.dark textarea {
     background-color: #c0a96d;
@@ -134,6 +135,7 @@ body.dark .titulos {
 	border-radius: 2px;
 	height: 4vw;
 	transition: .3s ease all;
+    font-size: 2vw;
 }
 body.dark .formulario__input {
     background-color: #c0a96d;
@@ -141,6 +143,7 @@ body.dark .formulario__input {
 
 .formulario__input:focus {
 	border: 3px solid #0075FF;
+    background: #ffdc82;
 	outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
